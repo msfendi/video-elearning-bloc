@@ -21,6 +21,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
+        //----------------- 4. Membungkus HomeScreen dengan BlocProvider -----------------
+        // homescreen dibungkus blocprovider saat pertama kali dirender, dan langsung memanggil api
+        // >>>>>>>>>>>>> lanjut ke home_screen dengan membawa context untuk digunakan turunan-turunannya >>>>>>>>>>>>>
         home: BlocProvider(
           create: (context) => PostBloc(apiRepository: ApiRepository(dataService: dataService))..add(LoadEvent()),
           child: const HomeScreen(),

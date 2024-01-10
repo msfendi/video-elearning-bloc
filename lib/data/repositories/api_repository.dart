@@ -8,6 +8,10 @@ class ApiRepository {
 
   ApiRepository({required this.dataService});
 
+  //----------------- 2. Membuat ApiRepository -----------------
+  // ApiRepository digunakan untuk mengubah data mentah dari dataservice menjadi data json lalu di map
+  // >>>>>>>>>>>>> lanjut ke post bloc >>>>>>>>>>>>>
+
   Future<List<Post>> getPostList() async {
     final response = await dataService.getPosts();
     if (response.statusCode == 200) {
